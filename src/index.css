@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-  
+  .ans{
+    height: 410px;
+  }
   .container h1:nth-child(1) {
     color: #94a3b8;
     font-family: 'Fira Code', monospace;

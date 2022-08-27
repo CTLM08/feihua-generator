@@ -71,7 +71,7 @@ export const App = () => {
           生成
         </div>
       </div>
-      <div className="bg-white w-96 h-96 rounded-xl p-3">
+      <div className="bg-white w-96 ans  rounded-xl p-3">
         <div>{bruh==''||subject==''||explain=='' ?  '请输入内容,谢谢':paragraph}</div>
       </div>
       <div className=""><Icon icon="charm:face-smile" className="-left-16 w-96 h-96 absolute -top-16 text-slate-300 hover:animate-spin"/></div>
