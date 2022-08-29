@@ -8,32 +8,32 @@ export const App = () => {
   const [explain, setexplain] = useState("");
 
   return (
-    <div className="bg-slate-200 h-screen w-full flex items-center justify-center gap-12 relative ">
+    <div className="bg-slate-200 h-screen w-full flex items-center justify-center gap-4 md:gap-12 relative p-2 md:p-0">
       <div className="z-[999]">
-        <div className="text-3xl ">营销号生成器</div>
+        <div className="text-xl md:text-3xl ">营销号生成器</div>
         <div className="mt-5">
-          <div className="text-2xl mt-3 ">主体</div>
+          <div className="md:text-2xl mt-3 ">主体</div>
           <input
             type="text"
-            className="rounded-xl w-80 h-8 p-5 border "
+            className="rounded-xl w-32 md:w-80 h-5 md:h-8 p-5 border "
             value={subject}
             onChange={(e) => setsubject(e.target.value)}
           ></input>
         </div>
         <div>
-          <div className="text-2xl mt-3">事件</div>
+          <div className=" md:text-2xl mt-3">事件</div>
           <input
             type="text"
-            className="rounded-xl w-80 h-8 p-5 border"
+            className="rounded-xl w-32 md:w-80 h-5 md:h-8 p-5 border"
             value={bruh}
             onChange={(e) => setbruh(e.target.value)}
           ></input>
         </div>
         <div>
-          <div className="text-2xl mt-3">解释</div>
+          <div className="md:text-2xl mt-3">解释</div>
           <input
             type="text"
-            className="rounded-xl w-80 h-8 p-5 border"
+            className="rounded-xl w-32 md:w-80 h-5 md:h-8 p-5 border"
             value={explain}
             onChange={(e) => setexplain(e.target.value)}
           ></input>
@@ -42,24 +42,24 @@ export const App = () => {
           <div>
             <button
               onClick={() => setchose(2)}
-              className={`bg-white rounded-sm w-20 h-10 flex items-center justify-center  ${
+              className={`bg-white rounded-sm w-14 md:w-20 h-10 flex items-center justify-center  ${
                 chose == 2 ? "border-2" : ""
-              } border-slate-500`}
+              } border-slate-500 text-xs md:text-base`}
             >
               故事性
             </button>
           </div>
           <div
             onClick={() => setchose(3)}
-            className={`bg-white rounded-sm w-20 h-10 flex items-center justify-center  ${
+            className={`bg-white rounded-sm w-14 md:w-20 h-10 flex items-center justify-center  ${
               chose == 3 ? "border-2" : ""
-            } border-slate-500`}
+            } border-slate-500 text-xs md:text-base`}
           >
             <button>废话文学</button>
           </div>
         </div>
         <div
-          className="mt-3 w-80 h-10 flex items-center justify-center bg-white rounded-xl hover:bg-slate-300 hover:text-white "
+          className="mt-3 w-32 md:w-80 h-8 md:h-10 flex items-center justify-center bg-white rounded-xl hover:bg-slate-300 hover:text-white "
           onClick={(e) => {
             setparagraph(
               chose == 3
@@ -71,10 +71,10 @@ export const App = () => {
           生成
         </div>
       </div>
-      <div className="bg-white w-96 ans  rounded-xl p-3">
-        <div>{bruh==''||subject==''||explain=='' ?  '请输入内容,谢谢':paragraph}</div>
+      <div className="bg-white w-48 md:w-96  ans  rounded-xl p-3 z-[99]">
+        <div className="text-sm md:text-base">{bruh==''||subject==''||explain=='' ?  '请输入内容,谢谢':paragraph}</div>
       </div>
-      <div className=""><Icon icon="charm:face-smile" className="-left-16 w-96 h-96 absolute -top-16 text-slate-300 hover:animate-spin"/></div>
+      <div className=""><Icon icon="charm:face-smile" className=" -left-12 md:-left-16 w-56 h-56 md:w-96 md:h-96 absolute top-2 md:-top-16 text-slate-300 hover:animate-spin"/></div>
       <div className="container absolute bottom-2 "><h1>made by liming..</h1> </div>
     </div>
   );
