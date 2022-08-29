@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.border{
+  outline:none;
+}
   .ans{
     height: 410px;
   }
