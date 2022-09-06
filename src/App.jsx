@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Icon } from '@iconify/react';
+import copy from 'copy-to-clipboard';
 export const App = () => {
   function forp1(){
     if(ram==1){
@@ -68,6 +69,7 @@ export const App = () => {
     }
   }
   const [chose, setchose] = useState(2);
+  const [copied, setcopied] = useState(false);
   const [paragraph, setparagraph] = useState("");
   const [subject, setsubject] = useState("");
   const [bruh, setbruh] = useState("");
@@ -155,8 +157,24 @@ export const App = () => {
           生成
         </div>
       </div>
-      <div className="bg-white w-48 md:w-96  ans  rounded-xl p-3 z-[99]">
+      <div className="bg-white w-48 md:w-96  ans  rounded-xl p-3 z-[99] relative">
         <div className="text-sm md:text-base">{bruh==''||subject==''||explain=='' ?  '请输入内容,谢谢':paragraph}</div>
+        <div className="absolute bottom-3 right-2 "><button
+              onClick={() => {
+                
+                setcopied(true);
+                setTimeout(() => {
+                  setcopied(false);
+                }, 1000);
+                copy(paragraph);
+               
+              }}
+            >
+              <Icon
+                icon={copied ? "ic:baseline-done-outline" : "akar-icons:copy"}
+                className="h-4 w-4 md:w-6 md:h-6 mt-0.5 "
+              />
+            </button></div>
       </div>
       <div className=""><Icon icon="charm:face-smile" className=" -left-12 md:-left-16 w-56 h-56 md:w-96 md:h-96 absolute top-2 md:-top-16 text-slate-300 hover:animate-spin"/></div>
       <div className="container absolute bottom-2 "><h1>made by liming..</h1> </div>
